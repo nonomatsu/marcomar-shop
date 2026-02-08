@@ -269,3 +269,20 @@ h3 {
     .insta-grid { grid-template-columns: repeat(2, 1fr); }
     .floating-ec-btn { width: 90%; left: 5%; bottom: 10px; text-align: center; }
 }
+
+/* ナビゲーション（メニュー）の修正 */
+    nav ul {
+        flex-direction: column; /* 横並びをやめて、縦並びにする */
+        gap: 15px; /* 上下の間隔を広めに空ける */
+        padding-top: 20px;
+    }
+
+    nav ul li {
+        font-size: 1.1rem; /* 文字を少し大きくして押しやすく */
+    }
+
+    /* もし「・」をCSS（::afterなど）でつけている場合、スマホでは消す */
+    nav ul li::after {
+        content: none; /* 点を消す */
+        display: none;
+    }
