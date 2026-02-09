@@ -250,35 +250,40 @@ h3 {
         padding: 60px 5%;
     }
 
-    /* 2. ヘッダーとメニュー */
+/* 2. ヘッダーとメニュー */
     header {
-        padding: 15px;
-        flex-direction: column; /* ロゴとメニューを縦に */
+        padding: 10px 5%; /* 上下の余白を少し減らす */
+        flex-direction: column; /* ロゴとメニューは縦積み（ロゴが上） */
         background-color: rgba(255, 255, 255, 0.98);
+        height: auto; /* 高さを自動調整 */
     }
 
     header h1 {
-        margin-bottom: 15px;
+        margin-bottom: 5px; /* ロゴ下の隙間を詰める */
+        font-size: 1.2rem; /* ロゴの大きさ調整 */
     }
 
-    /* メニューを縦並びにして押しやすく */
+    /* メニューを「横並び」に変えてスッキリさせる */
     header nav ul {
-        flex-direction: column; /* 縦並び */
-        gap: 15px;
+        flex-direction: row; /* ★ここが重要！縦(column)から横(row)へ */
+        flex-wrap: wrap; /* 画面が狭すぎたら折り返す */
+        justify-content: center; /* 真ん中寄せ */
+        gap: 15px 20px; /* メニュー同士の間隔（上下 左右） */
         width: 100%;
-        text-align: center;
-        padding-top: 10px;
-        border-top: 1px solid #eee;
+        padding-top: 5px;
+        border-top: none; /* 線を消してスッキリさせる */
     }
 
     header nav li {
-        width: 100%;
+        width: auto; /* 横幅いっぱいに広がるのを防ぐ */
+        border-bottom: none; /* 下線を消す */
+        padding: 0;
     }
 
     header nav a {
-        display: block; /* クリック範囲を広げる */
+        display: inline-block;
         padding: 5px 0;
-        font-size: 1.0rem; /* 文字を少し大きく */
+        font-size: 0.85rem; /* スマホで見やすいサイズ */
     }
 
     /* 3. ヒーローエリア */
